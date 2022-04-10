@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "nwzin-web": "apps/nwzin-web",
+    "nwzin-web-e2e": "apps/nwzin-web-e2e"
+  }
+}
