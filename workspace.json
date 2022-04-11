@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "nwzin-admin": "apps/nwzin-admin",
+    "nwzin-admin-e2e": "apps/nwzin-admin-e2e",
     "nwzin-web": "apps/nwzin-web",
     "nwzin-web-e2e": "apps/nwzin-web-e2e"
   }

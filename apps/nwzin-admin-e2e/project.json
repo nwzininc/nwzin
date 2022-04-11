@@ -1,0 +1,28 @@
+{
+  "root": "apps/nwzin-admin-e2e",
+  "sourceRoot": "apps/nwzin-admin-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nwzin-admin-e2e/cypress.json",
+        "devServerTarget": "nwzin-admin:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "nwzin-admin:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nwzin-admin-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nwzin-admin"]
+}

@@ -43,6 +43,12 @@
         "style": "styled-components",
         "linter": "eslint"
       }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
     }
   },
   "defaultProject": "nwzin-web"
