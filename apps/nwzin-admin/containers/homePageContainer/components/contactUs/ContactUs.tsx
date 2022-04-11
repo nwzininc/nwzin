@@ -21,5 +21,4 @@ const ContactUs:FC<ContactUsProps> = () => {
         </Flex>
     )
 };
-
 export default ContactUs;
