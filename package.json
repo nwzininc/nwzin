@@ -15,6 +15,7 @@
     "@emotion/server": "11.4.0",
     "@emotion/styled": "^11.8.1",
     "@fontsource/montserrat": "^4.5.7",
+    "@hookform/resolvers": "^2.8.8",
     "@nrwl/next": "13.10.1",
     "@reduxjs/toolkit": "^1.8.1",
     "core-js": "^3.6.5",
@@ -29,7 +30,8 @@
     "redux": "^4.1.2",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.3.5",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.7.2",

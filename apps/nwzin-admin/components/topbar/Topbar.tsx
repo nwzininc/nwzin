@@ -36,7 +36,7 @@ const Topbar: FC<TopbarProps> = () => {
         justifyContent="flex-end"
         width="100%"
         alignItems="center"
-        gap="20px"
+        gap="30px"
         display={['none', 'flex']}
       >
         <Link href="/learn" passHref>
@@ -55,7 +55,7 @@ const Topbar: FC<TopbarProps> = () => {
           </Box>
         </Link>
         <Link href="/login" passHref>
-          <Button bg="primary" fontFamily="heading" color="white">
+          <Button bg="primary" fontFamily="heading" color="white" marginLeft="50px">
             Login
           </Button>
         </Link>
