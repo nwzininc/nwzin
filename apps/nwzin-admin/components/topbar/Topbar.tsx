@@ -25,7 +25,7 @@ const Topbar: FC<TopbarProps> = () => {
       height="70px"
       width="100%"
       alignItems="center"
-      padding={['24px', '0px 128px']}
+      padding={['24px', '0px 200px', '0px 300px']}
       position="fixed"
       top="0px"
       zIndex="modal"

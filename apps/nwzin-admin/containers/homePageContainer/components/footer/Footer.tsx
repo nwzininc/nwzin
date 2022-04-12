@@ -5,7 +5,7 @@ import { FooterProps } from './types';
 
 const Footer:FC<FooterProps> = () => {
     return(
-        <Stack spacing={2} bg="primary" height="200px" color="whiteAlpha.600" width="100%" padding={["24px", "12px 124px", "12px 124px"]}>
+        <Stack spacing={2} bg="primary" color="whiteAlpha.600" width="100%" padding={['20px 30px', '60px 250px', '60px 350px']} >
             <Logo />
              <Text>nwzin pvt ltd.</Text>
              <Text>Bangalore-560068</Text>

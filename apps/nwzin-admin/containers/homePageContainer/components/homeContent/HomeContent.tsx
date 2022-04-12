@@ -5,12 +5,12 @@ import { HomeContentProps } from './types';
 
 const HomeContent: FC<HomeContentProps> = () => {
   return (
-    <Flex height={["90vh","80vh"]} width="100%" position="relative">
+    <Flex height={["100vh","80vh"]} minHeight="min-content" width="100%" position="relative">
       <Image src="/assets/images/bg.png" alt="background" position="absolute" zIndex="base" width="100%" height="100%" objectFit="cover" /> 
     <Flex
       flexDirection="column"
       width="100%"
-      padding={["24px","124px"]}
+      padding={['20px 30px', '0px 250px', '0px 350px']}
       gap="40px"
       justifyContent="center"
       height="100%"
@@ -18,10 +18,10 @@ const HomeContent: FC<HomeContentProps> = () => {
       position="relative"
       backgroundColor="#000000a6"
     >
-      <Heading color="white" fontFamily="heading" size="3xl" fontWeight="bold">
+      <Heading color="white" fontFamily="heading" fontSize={["4xl", "5xl"]} fontWeight="bold">
         Data collection made simple
       </Heading>
-      <Text color="white" fontFamily="heading" fontSize="2xl" width={["100%", "50%"]}>
+      <Text color="white" fontFamily="heading" fontSize={["large","2xl"]} width={["100%", "50%"]}>
         nwzin helps non-devlopers to create Android and Web applications to
         collect, analysize and store data.
       </Text>

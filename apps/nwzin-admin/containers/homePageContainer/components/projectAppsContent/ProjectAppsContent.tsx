@@ -7,15 +7,15 @@ const ProjectAppsContent: FC<ProjectAppsContentProps> = () => {
     <Flex
       bg="Background"
       height="max-content"
-      padding={['24px', '60px 124px']}
-      marginTop={['30px', '200px']}
+      padding={['20px 30px', '60px 250px', '60px 350px']} 
+      marginTop={['30px', '40px']}
       flexDirection="column"
       gap={['5', '10']}
     >
       <Heading
         fontSize={['xl', '4xl']}
         color="white"
-        maxWidth="70%"
+        maxWidth={["100%", "70%"]}
         fontFamily="heading"
         fontWeight="bold"
       >

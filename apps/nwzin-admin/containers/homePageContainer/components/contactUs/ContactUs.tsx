@@ -4,7 +4,7 @@ import { ContactUsProps } from './types';
 
 const ContactUs:FC<ContactUsProps> = () => {
     return(
-        <Flex id="contact" bg="white" height={["400px","600px"]} padding={["24px","60px 124px"]} gap="15">
+        <Flex id="contact" bg="white" height={["400px","600px"]} padding={['20px 30px', '60px 250px', '60px 350px']}  gap="15">
             <Flex flex="1" flexDirection="column" gap="10">
                 <Heading fontSize={["xl","2xl"]} color="primary" maxWidth={["100%","70%"]} fontFamily="heading" fontWeight="bold">
                 Contact Us
