@@ -9,6 +9,7 @@ const Logo: FC<LogoProps> = memo(({ color }) => {
       fontWeight="extrabold"
       color={color || 'white'}
       fontFamily="heading"
+      cursor="pointer"
     >
       nwzin
     </Box>

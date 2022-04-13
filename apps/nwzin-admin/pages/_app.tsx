@@ -5,10 +5,10 @@ import Head from 'next/head';
 import './styles.css';
 
 const colors = {
-  background: '#0f0e17',
-  primary: '#37BC64',
-  secondary: '#72757e',
-  tertiary: '#2cb67d'
+  primary: '#2adcb1',
+  secondary: '#a11cf8',
+  tertiary: '#fdc914',
+  forthColor: '#fb2d5d',
 }
 
 const theme = extendTheme({ 

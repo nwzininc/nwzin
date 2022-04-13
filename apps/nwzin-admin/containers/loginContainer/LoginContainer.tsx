@@ -3,22 +3,14 @@ import {
   } from '@chakra-ui/react';
   import React, { FC } from 'react';
   import Topbar from '../../components/topbar';
-  import { HomePageContainerProps } from './types';
-  import HomeContent from './components/homeContent';
-  import CreateAppsContent from './components/createAppsContent';
-  import ProjectAppsContent from './components/projectAppsContent';
-  import ContactUs from './components/contactUs';
-  import Footer from './components/footer';
+import LoginForm from './components/loginForm';
+  import { LoginContainerProps } from './types';
   
-  const LoginContainer: FC<HomePageContainerProps> = () => {
+  const LoginContainer: FC<LoginContainerProps> = () => {
     return (
-      <Flex flexDirection="column" backgroundSize="cover" width="100%">
+      <Flex flexDirection="column" width="100%" height="100vh" alignItems="center" justifyContent="center">
         <Topbar />
-        <HomeContent />
-        <CreateAppsContent />
-        <ProjectAppsContent />
-        <ContactUs />
-        <Footer />
+        <LoginForm />
       </Flex>
     );
   };

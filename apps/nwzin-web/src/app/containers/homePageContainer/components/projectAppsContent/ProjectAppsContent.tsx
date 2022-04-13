@@ -6,7 +6,7 @@ import { ProjectAppsContentProps } from './types';
 const ProjectAppsContent: FC<ProjectAppsContentProps> = () => {
   return (
     <Flex
-      bg="Background"
+      bg="secondary"
       height="max-content"
       padding={['24px', '60px 124px']}
       marginTop={['30px', '200px']}

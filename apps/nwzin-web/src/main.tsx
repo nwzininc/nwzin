@@ -7,9 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './app/app';
 
 const colors = {
-  background: '#0f0e17',
   primary: '#37BC64',
-  secondary: '#72757e',
+  secondary: '#a11cf8',
   tertiary: '#2cb67d'
 }
 

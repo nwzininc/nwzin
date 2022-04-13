@@ -6,7 +6,7 @@ import { HomeContentProps } from './types';
 
 const HomeContent: FC<HomeContentProps> = () => {
   return (
-    <Flex height={["90vh","80vh"]} width="100%" position="relative" background={`url(${bgImage}) no-repeat center center fixed`}>
+    <Flex height={["90vh","80vh"]} width="100%" position="relative" secondary={`url(${bgImage}) no-repeat center center fixed`}>
       <Image src={bgImage} position="absolute" zIndex="base" width="100%" height="100%" objectFit="cover" /> 
     <Flex
       flexDirection="column"
@@ -17,7 +17,7 @@ const HomeContent: FC<HomeContentProps> = () => {
       height="100%"
       zIndex="banner"
       position="relative"
-      backgroundColor="#000000a6"
+      secondaryColor="#000000a6"
     >
       <Heading color="white" fontFamily="heading" size="3xl" fontWeight="bold">
         Data collection made simple

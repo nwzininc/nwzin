@@ -19,7 +19,7 @@ const ContactUs: FC<ContactUsProps> = () => {
     <Flex
       id="contact"
       bg="white"
-      height={['400px', '600px']}
+      height={["min-content", "600px"]}
       padding={['20px 30px', '60px 250px', '60px 350px']}
       gap="15"
     >

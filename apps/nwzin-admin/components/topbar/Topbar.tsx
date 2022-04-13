@@ -8,6 +8,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
+  LinkBox,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -29,9 +30,9 @@ const Topbar: FC<TopbarProps> = () => {
       position="fixed"
       top="0px"
       zIndex="modal"
-      bg="Background"
+      bg="secondary"
     >
-      <Logo />
+      <Link href="/" passHref><LinkBox><Logo /></LinkBox></Link>
       <Flex
         justifyContent="flex-end"
         width="100%"
@@ -40,17 +41,17 @@ const Topbar: FC<TopbarProps> = () => {
         display={['none', 'flex']}
       >
         <Link href="/learn" passHref>
-          <Box color="white" fontWeight="bold" fontFamily="heading">
+          <Box color="white" fontWeight="bold" fontFamily="heading" cursor="pointer">
             Learn
           </Box>
         </Link>
         <Link href="/pricing" passHref>
-          <Box color="white" fontWeight="bold" fontFamily="heading">
+          <Box color="white" fontWeight="bold" fontFamily="heading" cursor="pointer">
             Pricing
           </Box>
         </Link>
         <Link href="/contact" passHref>
-          <Box color="white" fontWeight="bold" fontFamily="heading">
+          <Box color="white" fontWeight="bold" fontFamily="heading" cursor="pointer">
             Contact
           </Box>
         </Link>

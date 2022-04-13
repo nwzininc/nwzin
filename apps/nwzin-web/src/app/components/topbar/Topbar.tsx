@@ -32,7 +32,7 @@ const Topbar: FC<TopbarProps> = () => {
       position="fixed"
       top="0px"
       zIndex="modal"
-      bg="Background"
+      bg="secondary"
     >
       <Logo />
       <Flex

@@ -27,7 +27,7 @@ const HomeContent: FC<HomeContentProps> = () => {
       </Text>
       <Flex gap={["30px", "20px"]} flexDirection={["column", "row"]}>
         <Link href="/login" passHref><Button size="lg" fontFamily="heading"> Login </Button></Link>
-        <Link href="/signUp" passHref><Button size="lg" fontFamily="heading"  bg="primary" color="whiteAlpha.800"> Try for Free </Button></Link>
+        <Link href="/signup" passHref><Button size="lg" fontFamily="heading"  bg="primary" color="whiteAlpha.800"> Try for Free </Button></Link>
       </Flex>
     </Flex>
     </Flex>
