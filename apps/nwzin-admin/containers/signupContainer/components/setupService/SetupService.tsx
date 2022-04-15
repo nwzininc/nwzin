@@ -43,7 +43,7 @@ const SetupService: FC<SetupServiceProps> = ({ handleSetupService }) => {
           mode="onChange"
           onSubmit={handleSetupService}
           formStyles={{
-            marginTop: ['70px', '0px'],
+            marginTop: ['20px', '0px'],
             padding: ['5px', '30px'],
             flexDirection: ['column', 'row'],
             flexWrap: 'wrap',

@@ -34,7 +34,8 @@ const SignupContainer: FC<SignupContainerProps> = () => {
     <Flex
       flexDirection="column"
       width="100%"
-      height="100vh"
+      height={["auto","100vh"]}
+      minHeight="100vh"
       alignItems="center"
       justifyContent="center"
     >
