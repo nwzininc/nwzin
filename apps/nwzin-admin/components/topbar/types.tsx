@@ -1,3 +1,4 @@
 export interface TopbarProps{
-    id?: string;
+    isLoggedIn?: boolean;
+    showLogout?: boolean;
 }

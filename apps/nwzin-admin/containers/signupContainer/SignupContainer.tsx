@@ -1,10 +1,35 @@
-import { Flex } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import { Flex, useToast } from '@chakra-ui/react';
+import React, { FC, useState } from 'react';
 import Topbar from '../../components/topbar';
+import SetupService from './components/setupService';
 import SignUpForm from './components/signupForm';
-import { SignupContainerProps } from './types';
+import { useRouter } from 'next/router'
+import { SignupContainerProps, SignUpPayload, SetUpPayload } from './types';
 
 const SignupContainer: FC<SignupContainerProps> = () => {
+  const toast = useToast();
+  const router = useRouter()
+  const [signupState, setSignupState] = useState<SignUpPayload>(null);
+
+   const handleSetupService = (_payload: SetUpPayload) => {
+    toast(
+      {
+        title: 'Registered',
+        description: 'Successfully registered with us',
+        status: "success",
+        duration: 1000,
+        isClosable: true,
+      }
+    )
+    setTimeout(()=>{
+      router.push('/')
+    }, 2000)
+   }
+
+  const handleSignup = (payload: SignUpPayload) => {
+    setSignupState(payload);
+  };
+
   return (
     <Flex
       flexDirection="column"
@@ -13,8 +38,9 @@ const SignupContainer: FC<SignupContainerProps> = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Topbar />
-      <SignUpForm />
+      <Topbar isLoggedIn showLogout={false} />
+      {!signupState && <SignUpForm handleSignup={handleSignup} />}
+      {signupState && <SetupService handleSetupService={handleSetupService} />}
     </Flex>
   );
 };

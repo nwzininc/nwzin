@@ -1,3 +1,5 @@
+import { SignUpPayload } from "../../types";
+
 export interface SignUpFormProps{
-    id?: string;
+    handleSignup: (payload: SignUpPayload) => void;
 }

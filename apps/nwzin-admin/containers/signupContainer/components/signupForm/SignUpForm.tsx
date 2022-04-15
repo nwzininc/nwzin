@@ -30,9 +30,9 @@ const schema = yupResolver(
   })
 );
 
-const SignUpForm: FC<SignUpFormProps> = () => {
+const SignUpForm: FC<SignUpFormProps> = ({ handleSignup }) => {
   const handleSignUpSubmit = (payload) => {
-    console.log(payload, 'Payload');
+    handleSignup(payload)
   };
   return (
     <Flex
