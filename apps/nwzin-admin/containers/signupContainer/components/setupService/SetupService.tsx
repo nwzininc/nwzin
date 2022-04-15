@@ -24,7 +24,7 @@ const SetupService: FC<SetupServiceProps> = ({ handleSetupService }) => {
       width="100%"
       alignItems="center"
       justifyContent="center"
-      margin={["60px 0px", "0px"]}
+      margin={["120px 0px", "0px"]}
     >
       <Flex
         width={["100%", "60%"]}
