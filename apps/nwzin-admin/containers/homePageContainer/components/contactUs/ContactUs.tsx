@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import { Button, Flex, Heading, Image, Stack, useToast } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import Form from '../../../../components/form';
@@ -12,8 +12,17 @@ const schema = yup.object({
 });
 
 const ContactUs: FC<ContactUsProps> = () => {
+  const toast = useToast();
   const handleSubmit = (payload: any) => {
-    console.log(payload, 'Payload')
+    console.log(payload, 'Payload');
+    toast({
+      title: 'Thanks',
+      description: "Our Sales Agent will reach you soon",
+      status: "success",
+      duration: 1000,
+      position:"top",
+      isClosable: true,
+    })
   }
   return (
     <Flex
