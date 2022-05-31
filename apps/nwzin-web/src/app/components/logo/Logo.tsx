@@ -1,17 +1,15 @@
 import React, { FC, memo } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
 import { LogoProps } from './types';
+import { useAppSelector } from '../../../store';
 
 const Logo: FC<LogoProps> = memo(({ color }) => {
+  const appMeta = useAppSelector((state)=> state.authState?.appMeta);
+
   return (
-    <Box
-      fontSize="3xl"
-      fontWeight="extrabold"
-      color={color || 'white'}
-      fontFamily="heading"
-    >
-      nwzin
-    </Box>
+    <Flex padding="24px 0px" height="min-content" justifyContent="center" alignItems="center" width="100%">
+      <Image src={appMeta?.logoUrl} width="60px" height="auto" />
+    </Flex>
   );
 });
 

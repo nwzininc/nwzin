@@ -1,10 +1,16 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
-import "@fontsource/montserrat/400.css";
+import "@fontsource/nunito/500.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/300.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/nunito/700.css";
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './app/app';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const colors = {
   primary: '#37BC64',
@@ -15,16 +21,18 @@ const colors = {
 const theme = extendTheme({ 
   colors,
   fonts: {
-    heading: 'montserrat, sans-serif',
+    heading: 'nunito, sans-serif',
   }
  })
 
 ReactDOM.render(
   <StrictMode>
     <BrowserRouter>
-    <ChakraProvider theme={theme}>
-     <App />
-    </ChakraProvider>
+      <Provider store={store}>
+        <ChakraProvider theme={theme}>
+          <App />
+        </ChakraProvider>
+      </Provider>
     </BrowserRouter>
   </StrictMode>,
   document.getElementById('root')

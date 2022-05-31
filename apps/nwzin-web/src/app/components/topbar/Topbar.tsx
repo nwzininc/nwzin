@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Drawer,
@@ -9,6 +10,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
+  Text,
   Icon,
   Input,
   Stack,
@@ -26,54 +28,19 @@ const Topbar: FC<TopbarProps> = () => {
   return (
     <Flex
       height="70px"
-      width="100%"
+      width="calc(100% - 200px)"
+      bg="white"
       alignItems="center"
-      padding={['24px', '0px 128px']}
+      padding={['24px']}
       position="fixed"
       top="0px"
+      left="200px"
       zIndex="modal"
-      bg="secondary"
+      boxShadow="sm"
     >
-      <Logo />
-      <Flex
-        justifyContent="flex-end"
-        width="100%"
-        alignItems="center"
-        gap="20px"
-        display={['none', 'flex']}
-      >
-        <Link to="/learn">
-          <Box color="white" fontWeight="bold" fontFamily="heading">
-            Learn
-          </Box>
-        </Link>
-        <Link to="/pricing">
-          <Box color="white" fontWeight="bold" fontFamily="heading">
-            Pricing
-          </Box>
-        </Link>
-        <Link to="#contact">
-          <Box color="white" fontWeight="bold" fontFamily="heading">
-            Contact
-          </Box>
-        </Link>
-        <Link to="/login">
-          <Button bg="primary" fontFamily="heading" color="white">
-            Login
-          </Button>
-        </Link>
-      </Flex>
-      <Flex justifyContent="flex-end" width="100%" display={['flex', 'none']}>
-        <Button variant="link" ref={btnRef as any} onClick={onOpen}>
-          <HamburgerIcon
-            w={6}
-            h={6}
-            onClick={onOpen}
-            color="white"
-            cursor="pointer"
-          />
-        </Button>
-        <Drawer
+      <Flex justifyContent="flex-end" width="100%">
+         <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+        {/* <Drawer
           isOpen={isOpen}
           placement="right"
           onClose={onClose}
@@ -110,7 +77,7 @@ const Topbar: FC<TopbarProps> = () => {
               </Stack>
             </DrawerBody>
           </DrawerContent>
-        </Drawer>
+        </Drawer> */}
       </Flex>
     </Flex>
   );
