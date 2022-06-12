@@ -31,7 +31,7 @@ const YesOrNo: FC<YesOrNoWithTickProps> = forwardRef(
 
     return (
       <DesignerWrapper id={id} ref={ref}>
-        <Flex width="100%" flexDirection="column" padding="0px 16px">
+        <Flex width="100%" flexDirection="column" padding="0px 0px">
           <EditableText
             componentId={id}
             paddingLeft="4px"

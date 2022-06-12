@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _set from 'lodash/set';
+import _head from 'lodash/head';
 import { nanoid } from 'nanoid';
 import { buttonDCM } from '../../editableComponents/editbleButton';
 import { FormState } from '../formContainer';
@@ -18,11 +19,13 @@ const getDefaultPage = () => ({
       configurations: {
         settings: {
           rootStyles: {
-            padding: '0px 0px 0px 0px',
+            padding: "8px 0px 0px 16px",
           },
         },
+        validations: {
+
+        },
         dataMapping: {},
-        styles: {},
       },
     } as PageItem,
     buttonId: {
@@ -57,6 +60,7 @@ export const initialState: CurrentFormState = {
     primaryColor: colorVariationBuilder('#036E2C'),
     backgroundColor: colorVariationBuilder('#FFFFFF'),
   },
+  currentMode: 'Desktop',
   currentSelectedField: undefined,
   subFieldId: '',
   serviceStatus: 'pristine',
@@ -141,11 +145,23 @@ export const currentFormSlice = createSlice({
       state.currentSelectedField = 'ROOT';
       state.subFieldId = '';
     },
+    deletePage: (state, action) => {
+      state.currentForm.pages = state.currentForm.pages.filter((page) =>  page.pageId !== action.payload.pageId);
+      state.currentPage =  _head(state.currentForm.pages)?.pageId as unknown as string
+      state.currentSelectedField = 'ROOT';
+      state.subFieldId = '';
+    },
     updateColorScale: (state, action) => {
       _set(state.currentTheme as unknown as FormState ,action.payload.key, action.payload.colorScale)
     },
     saveTheme: (state) => {
       state.currentTheme.isUpdated = true
+    },
+    updateMode: (state, action) => {
+      state.currentMode = action.payload
+    },
+    savePublishForm: (state, action) => {
+    
     },
   },
   extraReducers: {
@@ -169,8 +185,11 @@ export const {
   updateChildNode,
   setCurrentField,
   deleteNode,
+  deletePage,
   addNewPage,
   selectPage,
   updateColorScale,
-  saveTheme
+  saveTheme,
+  updateMode,
+  savePublishForm
 } = currentFormSlice.actions;

@@ -12,3 +12,8 @@ export interface PageProps {
   name: string;
   handleSelectPage: () => void;
 }
+
+
+export interface SavePublishProps{
+  id?: string;
+}

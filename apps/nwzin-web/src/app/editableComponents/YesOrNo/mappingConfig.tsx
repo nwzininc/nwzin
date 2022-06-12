@@ -1,5 +1,5 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonContainerCMC, getCommonTextCMC } from '../commonMaping';
+import { getCommonContainerCMC, getCommonTextCMC, getValidationConfigs } from '../commonMaping';
 
 export const yesNoCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
@@ -10,6 +10,9 @@ export const yesNoCMC: Record<string, Record<string, DesignerConfig>> = {
     noContainer: getCommonContainerCMC('configurations.settings.noContainer', 'pick', ["backgroundColor", "borderRadius"]) as any,
   },
   dataMapping: {},
+  validations:{
+    ...getValidationConfigs('configurations.validations','pick', ['required']) as any,
+  }
 };
 
 export const yesNoDCM = {
@@ -43,4 +46,10 @@ export const yesNoDCM = {
     }
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: false,
+      message: 'Choose atleast one'
+    }
+  }
 };

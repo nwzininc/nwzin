@@ -136,3 +136,51 @@ export const getCommonContainerCMC = (
   }
   return buildCommonProps as Record<keyof Omit<CommonContainerProps, "backgroundColor">, DesignerConfig>;
 };
+
+
+export const getValidationConfigs = (
+  id: string,
+  type?: "pick" | "omit",
+  pickOmitList?: string[]
+) => {
+  const commonValidations = {
+    required: {
+      type: 'required',
+      label: 'Is Required ?',
+      options: [],
+      id: `${id}.required.value`,
+    },
+    max: {
+      type: 'max',
+      label: 'Maximum Number Allowed',
+      options: [],
+      id: `${id}.max.value`,
+    },
+    min: {
+      type: 'min',
+      label: 'Minimum Number Allowed',
+      options: [],
+      id: `${id}.min.value`,
+    },
+    minLength: {
+      type: 'minLength',
+      label: 'Minimum Character Length',
+      options: [],
+      id: `${id}.minLength.value`,
+    },
+    maxLength: {
+      type: 'maxLength',
+      label: 'Maximum Character Length',
+      options: [],
+      id: `${id}.maxLength.value`,
+    }
+  }
+  if(type === "omit" && pickOmitList){
+    return _omit(commonValidations, pickOmitList);
+  }
+  if(type === "pick" && pickOmitList){
+    return _pick(commonValidations, pickOmitList);
+  }
+  return commonValidations;
+
+}

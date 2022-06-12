@@ -24,7 +24,7 @@ const Rating: FC<EditbleRatingProps> = forwardRef<
   };
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Flex width="max-content" flexDirection="column" padding="0px 16px">
+      <Flex width="max-content" flexDirection="column" padding="0px 0px">
         <EditableText
           componentId={id}
           id={labelId}

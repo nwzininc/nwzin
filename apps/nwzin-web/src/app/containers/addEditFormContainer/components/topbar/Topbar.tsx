@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import PageList from './PageList';
+import SavePublish from './SavePublish';
 import { TopbarProps } from './types';
 
 const Topbar: FC<TopbarProps> = () => {
@@ -17,7 +18,8 @@ const Topbar: FC<TopbarProps> = () => {
       left="0px"
       boxShadow="lg"
     >
-      <PageList />
+        <PageList />
+        <SavePublish />
     </Flex>
   );
 };

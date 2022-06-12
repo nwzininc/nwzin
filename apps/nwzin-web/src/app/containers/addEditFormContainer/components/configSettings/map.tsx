@@ -12,6 +12,7 @@ import ColorConfigurator from '../../../../components/colorConfigurator';
 import opacityConfigurator from '../../../../components/opacityConfigurator';
 import effectConfigurator from '../../../../components/effectConfigurator';
 import SwitchCofigurator from '../../../../components/switchConfigurator';
+import OptionsConfigurator from '../../../../components/OptionsConfigurator';
 
 export const configOptionComponentMapping: Record<
   ConfigType,
@@ -29,7 +30,8 @@ export const configOptionComponentMapping: Record<
   BackgroundColor: ColorConfigurator,
   Opacity: opacityConfigurator,
   Effect: effectConfigurator,
-  Switch: SwitchCofigurator
+  Switch: SwitchCofigurator,
+  Options: OptionsConfigurator,
 };
 
 export const getComponentByConfigMapping = (type: ConfigType) => {

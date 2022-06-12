@@ -1,5 +1,5 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonTextCMC, getCommonContainerCMC } from '../commonMaping';
+import { getCommonTextCMC, getCommonContainerCMC, getValidationConfigs } from '../commonMaping';
 
 export const signatureCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
@@ -10,6 +10,9 @@ export const signatureCMC: Record<string, Record<string, DesignerConfig>> = {
     ) as any,
   },
   dataMapping: {},
+  validations:{
+    ...getValidationConfigs('configurations.validations','pick', ['required']) as any,
+  }
 };
 
 export const signatureDCM = {
@@ -44,4 +47,10 @@ export const signatureDCM = {
     },
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: true,
+      message: 'Signature required'
+    }
+  }
 };

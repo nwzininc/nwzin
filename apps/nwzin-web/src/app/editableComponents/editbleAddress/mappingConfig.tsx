@@ -88,4 +88,5 @@ export const addressDCM = {
     },
   },
   dataMapping: {},
+  validations:{}
 };

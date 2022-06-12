@@ -1,5 +1,5 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonTextCMC, getCommonContainerCMC } from '../commonMaping';
+import { getCommonTextCMC, getCommonContainerCMC, getValidationConfigs } from '../commonMaping';
 
 export const emailCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
@@ -10,6 +10,9 @@ export const emailCMC: Record<string, Record<string, DesignerConfig>> = {
     ) as any,
   },
   dataMapping: {},
+  validations: {
+    ...getValidationConfigs('configurations.validations', 'omit', ['min', 'max'])
+   }as any,
 };
 
 export const emailDCM = {
@@ -19,14 +22,14 @@ export const emailDCM = {
       fontWeight: 'semibold',
       align: 'left',
       padding: 0,
-      text: 'Email',
+      text: 'Input',
     },
     placeholder: {
       size: 'md',
       fontWeight: 'normal',
       align: 'left',
       padding: 0,
-      text: 'your email id',
+      text: 'Enter text',
     },
     inputStyles: {
       borderWidth: '1px',
@@ -42,4 +45,18 @@ export const emailDCM = {
     },
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: false,
+      message: null,
+    },
+    minLength: {
+      value: 6,
+      message: null,
+    },
+    maxLength: {
+      value: 256,
+      message: null,
+    }
+  }
 };

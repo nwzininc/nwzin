@@ -46,7 +46,7 @@ const textColor = isDark ? Color(primaryColor[500]).negate().lighten(10) :  Colo
 
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Box padding="0px 16px">
+      <Box>
         <EditableText
           componentId={id}
           {...label}
@@ -93,6 +93,8 @@ const textColor = isDark ? Color(primaryColor[500]).negate().lighten(10) :  Colo
               flexDirection="column"
               boxShadow="lg"
               zIndex={100}
+              maxHeight="300px"
+              overflow="auto"
               backgroundColor="#fff"
               borderRadius="8px"
               cursor="pointer"
@@ -107,7 +109,7 @@ const textColor = isDark ? Color(primaryColor[500]).negate().lighten(10) :  Colo
                     }}
                   >
                     {!isFirst && <Divider />}
-                    <Text padding="8px 12px" noOfLines={1} fontFamily="heading">
+                    <Text padding="8px 12px" isTruncated noOfLines={1} fontFamily="heading">
                       {label}
                     </Text>
                   </Box>

@@ -1,11 +1,14 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonTextCMC } from '../commonMaping';
+import { getCommonTextCMC, getValidationConfigs } from '../commonMaping';
 
 export const multiSelectCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
     question: getCommonTextCMC('configurations.settings.question') as any,
   },
   dataMapping: {},
+  validations:{
+    ...getValidationConfigs('configurations.validations','pick', ['required']) as any,
+  }
 };
 
 export const multiSelectDCM = {
@@ -37,4 +40,10 @@ export const multiSelectDCM = {
     },
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: true,
+      message: 'Select atleast one options'
+    }
+  }
 };

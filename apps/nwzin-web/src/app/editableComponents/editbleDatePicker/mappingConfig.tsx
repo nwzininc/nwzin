@@ -1,5 +1,5 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonTextCMC, getCommonContainerCMC } from '../commonMaping';
+import { getCommonTextCMC, getCommonContainerCMC, getValidationConfigs } from '../commonMaping';
 
 export const datePickerCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
@@ -10,6 +10,9 @@ export const datePickerCMC: Record<string, Record<string, DesignerConfig>> = {
     ) as any,
   },
   dataMapping: {},
+  validations: {
+    ...getValidationConfigs('configurations.validations', 'omit', ['min', 'max'])
+   }as any,
 };
 
 export const datePickerDCM = {
@@ -42,4 +45,10 @@ export const datePickerDCM = {
     },
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: false,
+      message: 'Select Date'
+    }
+  }
 };

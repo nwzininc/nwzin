@@ -23,7 +23,7 @@ const EditbleSignature: FC<EditbleSignatureProps> = forwardRef<
 
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Box width="100%" padding="0px 16px">
+      <Box width="100%" padding="0px 0px">
         <EditableText
           componentId={id}
           {...label}

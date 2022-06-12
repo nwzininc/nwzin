@@ -24,7 +24,7 @@ const EditbleNumber: FC<EditbleNumberProps> = forwardRef<
 
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Box padding="0px 16px">
+      <Box>
         <EditableText
           componentId={id}
           {...label}

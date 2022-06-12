@@ -13,7 +13,7 @@ const Heading: FC<HeadingProps> = forwardRef<HTMLDivElement, HeadingProps>(
           id={innerTextId}
           selectionId={''}
           {...text}
-          isHeading
+          isHeading={false}
           {...containerStyles}
           value={text.text}
           placeholder={'Type Heading here'}

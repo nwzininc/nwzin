@@ -3,6 +3,8 @@
   "projects": {
     "nwzin-admin": "apps/nwzin-admin",
     "nwzin-admin-e2e": "apps/nwzin-admin-e2e",
+    "nwzin-mobile": "apps/nwzin-mobile",
+    "nwzin-mobile-e2e": "apps/nwzin-mobile-e2e",
     "nwzin-web": "apps/nwzin-web",
     "nwzin-web-e2e": "apps/nwzin-web-e2e"
   }

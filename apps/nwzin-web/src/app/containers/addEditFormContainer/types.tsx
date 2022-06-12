@@ -1,5 +1,6 @@
 import { type } from 'os';
 import { APISchema, APIServiceStatus } from '../../utilities/apiService/types';
+import { Mode } from './components/formDesigner/types';
 import { ColorScale } from './helper';
 
 export interface AddEditFormContainerProps {
@@ -16,6 +17,7 @@ export interface DroppedItem {
 
 export interface ComponentConfigurations {
   settings: Record<string, any>;
+  validations: Record<string, any>;
   dataMapping: Record<string, any>;
 }
 
@@ -56,6 +58,7 @@ export interface FormState {
   currentPage: string;
   currentSelectedField?: string;
   currentTheme: FormTheme;
+  currentMode: Mode;
   subFieldId: string;
 }
 

@@ -38,7 +38,7 @@ const MultiSelect: FC<MultiSelectProps> = forwardRef(
       <DesignerWrapper id={id} ref={ref}>
         <Flex
           flexDirection="column"
-          padding="16px"
+          margin="8px 0px"
           gap="8px"
           minWidth="max-content"
           boxSizing="border-box"

@@ -1,7 +1,7 @@
-import { Flex, Text } from '@chakra-ui/react';
-import { useAppDispatch, useAppSelector } from 'apps/nwzin-web/src/store';
-import React, { FC } from 'react';
-import { addNewPage, selectPage } from '../../reducer';
+import { Flex, Text, Box, Button } from '@chakra-ui/react';
+import { useAppDispatch, useAppSelector } from '../../../../../store';
+import React, { FC, MouseEvent } from 'react';
+import { addNewPage, selectPage, deletePage } from '../../reducer';
 import { PageListProps, PageProps } from './types';
 
 const Page: FC<PageProps> = ({
@@ -18,8 +18,10 @@ const Page: FC<PageProps> = ({
       borderRadius="4px"
       boxShadow="base"
       width="80px"
+      position="relative"
       onClick={handleSelectPage}
       cursor="pointer"
+      paddingRight="8px"
       bg={isSelected ? '#7f5af0' : '#fff'}
     >
       <Text
@@ -43,6 +45,11 @@ const PageList: FC<PageListProps> = () => {
   const handleSelectPage = (pageId: string) => () => {
     dispatch(selectPage({ pageId }));
   };
+  const handleDeleteClick = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    dispatch(deletePage({ pageId: currentPage }));
+  };
+  const isMultipageForm = currentForm?.pages.length > 1;
   return (
     <Flex
       height="60px"
@@ -71,6 +78,7 @@ const PageList: FC<PageListProps> = () => {
           borderRadius="4px"
           boxShadow="base"
           width="80px"
+          cursor="pointer"
           bg="#fff"
           onClick={handleClick}
         >
@@ -78,6 +86,13 @@ const PageList: FC<PageListProps> = () => {
             +
           </Text>
         </Flex>
+      )}
+      {isMultipageForm && (
+        <Box position="fixed" top="75px" right="350px">
+          <Button onClick={handleDeleteClick} variant="outline" colorScheme="orange">
+            Delete Page
+          </Button>
+        </Box>
       )}
     </Flex>
   );

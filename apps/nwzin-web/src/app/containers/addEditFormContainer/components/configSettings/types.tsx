@@ -18,7 +18,8 @@ export type ConfigType =
   | 'Border'
   | 'Opacity'
   | 'Effect'
-  | 'Switch';
+  | 'Switch'
+  | 'Options';
 
 export interface ConfigOption {
   label: string;

@@ -26,7 +26,7 @@ const EditblePhone: FC<EditbleEmailProps> = forwardRef<
 
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Box padding="0px 16px">
+      <Box padding="0px 0px">
         <EditableText
           componentId={id}
           {...label}

@@ -1,11 +1,14 @@
 import { DesignerConfig } from '../../containers/addEditFormContainer/components/configSettings/types';
-import { getCommonTextCMC } from '../commonMaping';
+import { getCommonTextCMC, getValidationConfigs } from '../commonMaping';
 
 export const ratingCMC: Record<string, Record<string, DesignerConfig>> = {
   settings: {
     label: getCommonTextCMC('configurations.settings.label') as any,
   },
   dataMapping: {},
+  validations:{
+    ...getValidationConfigs('configurations.validations','pick', ['required']) as any,
+  }
 };
 
 export const ratingDCM = {
@@ -25,4 +28,10 @@ export const ratingDCM = {
     },
   },
   dataMapping: {},
+  validations:{
+    required: {
+      value: false,
+      message: 'Enter your ratings'
+    }
+  }
 };

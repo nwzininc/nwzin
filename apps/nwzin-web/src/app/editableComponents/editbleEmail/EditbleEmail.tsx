@@ -20,7 +20,7 @@ const EditbleEmail: FC<EditbleEmailProps> = forwardRef<
   };
   return (
     <DesignerWrapper id={id} ref={ref}>
-      <Box onClick={handleClick} padding="0px 16px">
+      <Box onClick={handleClick} padding="0px 0px">
         <EditableText
           componentId={id}
           cursor="pointer"

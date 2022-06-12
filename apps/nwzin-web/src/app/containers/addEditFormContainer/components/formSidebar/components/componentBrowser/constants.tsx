@@ -1,6 +1,6 @@
 import { MdShortText, MdOutlineEmail, MdPhone } from 'react-icons/md';
 import { BsCardText, BsCalendarDate } from 'react-icons/bs';
-import { FaSignature, FaAddressCard } from 'react-icons/fa';
+import { FaSignature, FaAddressCard, FaFile, FaSearchLocation } from 'react-icons/fa';
 
 export const componentListTypes = [
   {
@@ -16,8 +16,8 @@ export const componentListTypes = [
     bgColor: '#d55b99',
   },
   {
-    id: 'email',
-    label: 'Email',
+    id: 'input',
+    label: 'Input',
     icon: MdOutlineEmail,
     bgColor: '#adebe4',
   },
@@ -75,10 +75,22 @@ export const componentListTypes = [
     icon: BsCardText,
     bgColor: '#4fc3cf',
   },
+  // {
+  //   id: 'button',
+  //   label: 'Button',
+  //   icon: BsCardText,
+  //   bgColor: '#4fc3cf',
+  // },
   {
-    id: 'button',
-    label: 'Button',
-    icon: BsCardText,
-    bgColor: '#4fc3cf',
+    id: 'uploadCard',
+    label: 'File upload',
+    icon: FaFile,
+    bgColor: '#fdd09b',
+  },
+  {
+    id: 'location',
+    label: 'Location',
+    icon: FaSearchLocation,
+    bgColor: '#fdd09b',
   },
 ];

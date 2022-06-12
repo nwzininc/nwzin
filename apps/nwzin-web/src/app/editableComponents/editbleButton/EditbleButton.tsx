@@ -30,6 +30,7 @@ const EditbleButton: FC<EditbleButtonProps> = forwardRef<
     const primaryColor = useAppSelector(
       (state) => state.currentFormState.currentTheme.primaryColor
     );
+    const mode = useAppSelector((state)=> state.currentFormState.currentMode);
     const backButtonlabelId = `${id}.configurations.settings.backButtonlabel.text`;
     const resetButtonlabelId = `${id}.configurations.settings.resetButtonlabel.text`;
     const submitButtonlabelId = `${id}.configurations.settings.submitButtonlabel.text`;
@@ -48,22 +49,22 @@ const EditbleButton: FC<EditbleButtonProps> = forwardRef<
         event.stopPropagation();
         dispatch(setCurrentField({ currentField: id, subFieldId: subFieldId }));
       };
-
+    const isDesktop = mode === "Desktop";
     return (
       <DesignerWrapper id={id} ref={ref}>
         <Flex
           onClick={handleClick(buttonBarStylesId)}
           flexDirection="row"
-          gap="16px"
+          gap={ isDesktop ? "16px" : "8px"}
           justifyContent="right"
           alignItems="center"
-          width="calc(100% - 600px)"
+          width={isDesktop ? "calc(100% - 600px)" : "400px"}
           position="fixed"
           bottom="0px"
-          left="300px"
+          left={isDesktop ? "300px" : "calc(50% - 200px)" }
           backgroundColor="#fff"
           boxShadow="2xl"
-          padding="16px 48px"
+          padding={ isDesktop ?  "16px 48px":  "16px 24px"}
           zIndex={1000000}
         >
           <Flex

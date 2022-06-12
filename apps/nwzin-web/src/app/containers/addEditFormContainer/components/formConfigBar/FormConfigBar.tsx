@@ -1,6 +1,5 @@
 import {
   Flex,
-  Icon,
   Tab,
   TabList,
   TabPanel,
@@ -8,11 +7,9 @@ import {
   Tabs,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { FcSettings } from 'react-icons/fc';
-import { FaDatabase } from 'react-icons/fa';
-import { MdColorLens } from 'react-icons/md';
 import { FormConfigBarProps } from './types';
 import ConfigSettings from '../configSettings';
+import ValidationSettings from '../validationSettings';
 
 const FormConfigBar: FC<FormConfigBarProps> = () => {
   return (
@@ -25,16 +22,35 @@ const FormConfigBar: FC<FormConfigBarProps> = () => {
       top="60px"
       right="0px"
     >
-      <Tabs width="100%" variant="line" colorScheme="cyan">
+      <Tabs width="100%" variant="line" colorScheme="black">
         <TabList width="100%">
-          <Tab width="100%" padding="15px" fontWeight="semibold">
-            <Icon as={FcSettings} title="Settings" />
+          <Tab
+            width="100%"
+            padding="15px"
+            fontSize="md"
+            fontFamily="heading"
+            fontWeight="semibold"
+            _focus={{ boxShadow: 'none' }}
+          >
+            Design
           </Tab>
-          <Tab width="100%" fontWeight="semibold" >
-            <Icon as={MdColorLens} title="Styles"  />
+          <Tab
+            width="100%"
+            fontSize="md"
+            fontFamily="heading"
+            fontWeight="semibold"
+            _focus={{ boxShadow: 'none' }}
+          >
+            Validations
           </Tab>
-          <Tab width="100%" fontWeight="semibold">
-            <Icon as={FaDatabase} title="Data Mapping"/>
+          <Tab
+            width="100%"
+            fontSize="md"
+            fontFamily="heading"
+            fontWeight="semibold"
+            _focus={{ boxShadow: 'none' }}
+          >
+            Settings
           </Tab>
         </TabList>
 
@@ -43,7 +59,7 @@ const FormConfigBar: FC<FormConfigBarProps> = () => {
             <ConfigSettings />
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <ValidationSettings />
           </TabPanel>
           <TabPanel>
             <p>three!</p>

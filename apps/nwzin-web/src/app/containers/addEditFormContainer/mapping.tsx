@@ -44,6 +44,8 @@ import EditbleButton, {
   buttonDCM,
 } from '../../editableComponents/editbleButton';
 import { getCommonContainerCMC } from '../../editableComponents/commonMaping';
+import UploadCard, { uploadCardCMC, uploadCardDCM} from '../../editableComponents/UploadCard';
+import Location ,{ locationCMC, locationDCM } from '../../editableComponents/Location';
 
 const rootCMC = {
   settings: {
@@ -64,7 +66,7 @@ const rootDCM = {
 export const componentIdMapping = {
   heading: Heading,
   description: Description,
-  email: EditbleEmail,
+  input: EditbleEmail,
   rating: Rating,
   yesNo: YesOrNo,
   multiSelect: MultiSelect,
@@ -75,6 +77,8 @@ export const componentIdMapping = {
   signature: EditableSignature,
   datePicker: EditableDatepicker,
   button: EditbleButton,
+  uploadCard: UploadCard,
+  location: Location 
 };
 
 export const getComponentIdMapping = (componentId: string): React.FC<any> => {
@@ -88,7 +92,7 @@ export const getComponentIdMapping = (componentId: string): React.FC<any> => {
 export const DefaultConfigurationMappingByComponent = {
   heading: headingDCM,
   description: descriptionDCM,
-  email: emailDCM,
+  input: emailDCM,
   rating: ratingDCM,
   yesNo: yesNoDCM,
   multiSelect: multiSelectDCM,
@@ -100,6 +104,8 @@ export const DefaultConfigurationMappingByComponent = {
   datePicker: datePickerDCM,
   button: buttonDCM,
   ROOT: rootDCM,
+  uploadCard: uploadCardDCM,
+ location: locationDCM 
 };
 export const getDefaultConfigurationsByComponentId = (componentId: string) => {
   return _get(DefaultConfigurationMappingByComponent, componentId);
@@ -112,7 +118,7 @@ export const getDefaultConfigurationsByComponentId = (componentId: string) => {
 export const componentConfigurationMapping = {
   heading: headingCMC,
   description: descriptionCMC,
-  email: emailCMC,
+  input: emailCMC,
   rating: ratingCMC,
   yesNo: yesNoCMC,
   multiSelect: multiSelectCMC,
@@ -124,6 +130,8 @@ export const componentConfigurationMapping = {
   datePicker: datePickerCMC,
   button: buttonCMC,
   ROOT: rootCMC,
+  uploadCard: uploadCardCMC,
+  location: locationCMC
 };
 export const getCMCMapping = (componentId: string) => {
   return _get(componentConfigurationMapping, componentId);

@@ -1,26 +1,35 @@
 import {
+  Box,
   FormControl,
   FormErrorMessage,
   FormLabel,
+  FormLabelProps,
   Input,
 } from '@chakra-ui/react';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import React, { FC, memo } from 'react';
 import { Controller } from 'react-hook-form';
+import { errorMessageMaping } from './constant';
 import { FormFieldProps } from './types';
 
 const FormField: FC<FormFieldProps> = memo(
-  ({ children, name, label, placeholder, ...rest }) => {
+  ({ children, rules, name: labelName, label, labelStyles, placeholder, defaultValue, ...rest }) => {
     return (
       <Controller
-        name={name}
+        name={labelName}
+        rules={rules}
+        defaultValue={defaultValue}
         render={({
           field: { onChange, onBlur, value, name, ref },
-          fieldState: { invalid, error },
+          fieldState: { error, invalid },
         }) => (
           <FormControl isInvalid={invalid}>
             {!!label && (
-              <FormLabel fontFamily="heading" color="" htmlFor={name}>
+              <FormLabel
+                fontFamily="heading"
+                htmlFor={name}
+                {...(labelStyles as unknown as FormLabelProps)}
+              >
                 {label}
               </FormLabel>
             )}
@@ -35,9 +44,19 @@ const FormField: FC<FormFieldProps> = memo(
                 onBlur={onBlur}
               />
             )}
-            {children && React.cloneElement(children as unknown as ReactJSXElement, { onChange, onBlur, value, name, ref, error, invalid})}
-            <FormErrorMessage>{error && error?.message}</FormErrorMessage>
-          </FormControl>
+            {React.Children.map(children, (child: any) => {
+              console.log("error", error)
+              return React.cloneElement(child as unknown as ReactJSXElement, {
+                onChange,
+                onBlur,
+                value,
+                name,
+                ref,
+                error,
+              });
+            })}
+            <FormErrorMessage>{error && errorMessageMaping(error?.type) } </FormErrorMessage>
+        </FormControl>
         )}
       />
     );

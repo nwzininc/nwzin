@@ -33,12 +33,12 @@ const EditableOption: FC<EditableOptionProps> = ({
     <Flex alignItems="center">
       <Flex
         width="100%"
-        minWidth="400px"
+        minWidth="354px"
         alignItems="center"
         border={`1px solid ${styles.color}`}
         padding="8px 12px"
         borderRadius="8px"
-        maxWidth="400px"
+        maxWidth="354px"
       >
         <Flex
           height="26px"
@@ -49,7 +49,7 @@ const EditableOption: FC<EditableOptionProps> = ({
           alignItems="center"
           border={`1px solid ${styles.color}`}
           boxShadow="base"
-          backgroundColor={isFirstOption ? styles.color : '#fff'}
+          backgroundColor={isFirstOption ? styles.color : 'transperent'}
           onClick={handleClick(selectedOptionStylesId)}
         >
           <Text
@@ -81,7 +81,7 @@ const EditableOption: FC<EditableOptionProps> = ({
           border={`1px solid ${styles.color}`}
           boxShadow="base"
           onClick={handleClick(selectedOptionStylesId)}
-          backgroundColor={isFirstOption ? styles.color : '#fff'}
+          backgroundColor={isFirstOption ? styles.color : 'transperent'}
         >
           {isFirstOption && <MdCheck color="#fff" />}
         </Flex>

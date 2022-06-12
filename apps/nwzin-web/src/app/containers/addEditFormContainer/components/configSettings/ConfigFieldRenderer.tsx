@@ -1,14 +1,8 @@
 import {
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Divider,
   Flex,
   FormControl,
-  FormLabel,
   Heading,
-  Text,
 } from '@chakra-ui/react';
 import React, { ChangeEvent, FC, useCallback } from 'react';
 import _get from 'lodash/get';
@@ -62,7 +56,7 @@ const ConfigFieldRenderer: FC<ConfigFieldRendererProps> = ({
       </Flex>
     );
   }
-  const isSubFieldSelected =subFieldId?.includes(`.${title}`);
+  const isSubFieldSelected = subFieldId?.includes(`.${title}`);
   if (isSubFieldSelected) {
     return (
      <Flex flexDirection="column">

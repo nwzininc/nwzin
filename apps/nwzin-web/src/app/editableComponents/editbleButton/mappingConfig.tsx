@@ -107,4 +107,5 @@ export const buttonDCM = {
     showSubmitButton: true,
   },
   dataMapping: {},
+  validations:{}
 };
